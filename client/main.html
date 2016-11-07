@@ -28,14 +28,15 @@
     {{> flashMessages}}
     {{> Template.dynamic template=content}}
     </div>
-    <div class="col-md-6 hidden-xs hidden-sm" id="summary">
-      <div data-spy="affix" target="summary"> 
+    <div class="col-md-6 hidden-xs hidden-sm">
+    <div class="affix"> 
         {{> summary}}
-      </div>
+    </div>
     </div>
     <div class="col-md-6 visible-xs visible-sm">
       {{> summary}}
     </div>
+
     {{else}}
     <div class="loading">loading...</div>
   {{/if}}

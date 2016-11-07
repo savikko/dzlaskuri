@@ -1,64 +1,73 @@
 <template name="values">
-  <h2>Arvot</h2>
+  <h2>{{_ "values"}}</h2>
   {{#autoForm collection="Dz" id="newDz" type="insert" doc=defaultValues}}
-  <button type="submit" class="btn btn-primary pull-right">Tallenna arvot</button>
-  <small>Voit jakaa tallentamisen jälkeen osoiterivillä näkyvän linkin.
-  <br>Uusi painallus tekee aina uuden tallennuksen.</small>
+  <button type="submit" class="btn btn-primary pull-right">{{_ "save_values"}}</button>
+  <small>{{_ "save_values_help"}}</small>
   <br><br>
   <fieldset>
-    <legend>Perustiedot</legend>
+    <legend>{{_ "basic_info"}}</legend>
       <div class=row>
-      <div class=col-md-2><label>Jäseniä</label>
+      <div class=col-md-2><label>{{_ "members"}}</label>
       <br>
-      <span class="btn btn-info">{{fieldValue 'members'}} kpl</span></div>
+      <span class="btn btn-sm btn-info">{{fieldValue 'members'}} {{_ "qty"}}</span></div>
       <div class=col-md-10>
         {{> afFieldInput name='members'}}
       </div>
       </div>
       <br><br><br>
       <div class=row>
-      <div class=col-md-2><label>Jäsenmaksu</label>
+      <div class=col-md-2><label>{{_ "member_fee"}}</label>
       <br>
-      <span class="btn btn-success">{{fieldValue 'memberFee'}} €</span></div>
+      <span class="btn btn-sm btn-success">{{fieldValue 'memberFee'}} €</span></div>
       <div class=col-md-10>
       {{> afFieldInput name='memberFee'}}
       </div>
       </div>
       <br><br><br>
       <div class=row>
-      <div class=col-md-2><label>Hyppypäiviä / vuosi</label>
+      <div class=col-md-2><label>{{_ "jump_days_per_year"}}</label>
       <br>
-      <span class="btn btn-info">{{fieldValue 'jumpDaysPerYear'}} kpl</span></div>
+      <span class="btn btn-sm btn-info">{{fieldValue 'jumpDaysPerYear'}} {{_ "qty"}}</span></div>
       <div class=col-md-10>
       {{> afFieldInput name='jumpDaysPerYear'}}
       </div>
       </div>
       <br><br><br>
       <div class=row>
-      <div class=col-md-2><label>Kiinteät kulut / vuosi</label>
+      <div class=col-md-2><label>{{_ "general_fixed_costs"}}</label>
       <br>
-      <span class="btn btn-success">{{fieldValue 'fixedDzCosts'}} €</span></div>
+      <span class="btn btn-sm btn-success">{{fieldValue 'fixedDzCosts'}} €</span></div>
       <div class=col-md-10>
       {{> afFieldInput name='fixedDzCosts'}}
       </div>
       </div>
+      <br><br><br>
+      <div class=row>
+      <div class=col-md-2><label>{{_ "ac_fixed_costs"}}</label>
+      <br>
+      <span class="btn btn-sm btn-success">{{fieldValue 'acCostPerYear'}} €</span></div>
+      <div class=col-md-10>
+      {{> afFieldInput name='acCostPerYear'}}
+      </div>
+      </div>
+      
   </fieldset>
   <br>
   <fieldset>
-    <legend>Hyppyhinnat</legend>
+    <legend>{{_ "jump_prices"}}</legend>
     <div class=row>
-      <div class=col-md-2><label>Hyppylippu 4000m</label>
+      <div class=col-md-2><label>{{_ "jump_ticket_4k"}}</label>
       <br>
-      <span class="btn btn-success">{{fieldValue 'jumpPrice4K'}} €</span></div>
+      <span class="btn btn-sm btn-success">{{fieldValue 'jumpPrice4K'}} €</span></div>
       <div class=col-md-10>
       {{> afFieldInput name='jumpPrice4K'}}
       </div>
       </div>
       <br><br><br>
       <div class=row>
-      <div class=col-md-2><label>Hyppylippu tandem</label>
+      <div class=col-md-2><label>{{_ "jump_ticket_tandem"}}</label>
       <br>
-      <span class="btn btn-success">{{fieldValue 'jumpPriceTandem'}} €</span></div>
+      <span class="btn btn-sm btn-success">{{fieldValue 'jumpPriceTandem'}} €</span></div>
       <div class=col-md-10>
       {{> afFieldInput name='jumpPriceTandem'}}
       </div>
@@ -67,20 +76,20 @@
   </fieldset>
   <br>
   <fieldset>
-    <legend>Toimintaluvut</legend>
+    <legend>{{_ "operation_level"}}</legend>
     <div class=row>
-      <div class=col-md-2><label>Hyppyjä vuosittain</label>
+      <div class=col-md-2><label>{{_ "jumps_per_year"}}</label>
       <br>
-      <span class="btn btn-info">{{fieldValue 'jumpsPerYear'}} kpl</span></div>
+      <span class="btn btn-sm btn-info">{{fieldValue 'jumpsPerYear'}} kpl</span></div>
       <div class=col-md-10>
       {{> afFieldInput name='jumpsPerYear'}}
       </div>
       </div>
       <br><br><br>
       <div class=row>
-      <div class=col-md-2><label>Tandemeita vuosittain</label>
+      <div class=col-md-2><label>{{_ "tandems_per_year"}}</label>
       <br>
-      <span class="btn btn-info">{{fieldValue 'tandemsPerYear'}} kpl</span></div>
+      <span class="btn btn-sm btn-info">{{fieldValue 'tandemsPerYear'}} {{_ "qty"}}</span></div>
       <div class=col-md-10>
       {{> afFieldInput name='tandemsPerYear'}}
       </div>
@@ -89,38 +98,29 @@
   </fieldset>
   <br>
   <fieldset>
-    <legend>Lentokoneen tiedot</legend>
+    <legend>{{_ "ac_info"}}</legend>
       <div class=row>
-      <div class=col-md-2><label>Kiinteät kulut / vuosi</label>
+      <div class=col-md-2><label>{{_ "flight_hour_cost"}}</label>
       <br>
-      <span class="btn btn-success">{{fieldValue 'acCostPerYear'}} €</span></div>
-      <div class=col-md-10>
-      {{> afFieldInput name='acCostPerYear'}}
-      </div>
-      </div>
-      <br><br><br>
-      <div class=row>
-      <div class=col-md-2><label>Lentotunti</label>
-      <br>
-      <span class="btn btn-success">{{fieldValue 'acCostPerFlightHour'}} €</span></div>
+      <span class="btn btn-sm btn-success">{{fieldValue 'acCostPerFlightHour'}} €</span></div>
       <div class=col-md-10>
       {{> afFieldInput name='acCostPerFlightHour'}}
       </div>
       </div>
       <br><br><br>
       <div class=row>
-      <div class=col-md-2><label>Poka-aika 4000m (maasta-maahan)</label>
+      <div class=col-md-2><label>{{_ "ground_to_ground_time"}}</label>
       <br>
-      <span class="btn btn-warning">{{fieldValue 'fullAltitudeLoadMins'}} min</span></div>
+      <span class="btn btn-sm btn-warning">{{fieldValue 'fullAltitudeLoadMins'}} min</span></div>
       <div class=col-md-10>
       {{> afFieldInput name='fullAltitudeLoadMins'}}
       </div>
       </div>
       <br><br><br>
       <div class=row>
-      <div class=col-md-2><label>Hyppääjiä koneeseen</label>
+      <div class=col-md-2><label>{{_ "jumpers_on_load"}}</label>
       <br>
-      <span class="btn btn-info">{{fieldValue 'acJumpersIn'}} kpl</span></div>
+      <span class="btn btn-sm btn-info">{{fieldValue 'acJumpersIn'}} {{_ "qty"}}</span></div>
       <div class=col-md-10>
       {{> afFieldInput name='acJumpersIn'}}
       </div>
@@ -129,10 +129,10 @@
   </fieldset>
   <br>
   <fieldset>
-    <legend>Korvaukset</legend>
+    <legend>{{_ "compensations"}}</legend>
       <div class=row>
-      <div class=col-md-2><label>Korvaus THM</label>
-      <span class="btn btn-success">{{fieldValue 'compensationTI'}} € / hyppy</span>
+      <div class=col-md-2><label>{{_ "compensation_ti"}}</label>
+      <span class="btn btn-sm btn-success">{{fieldValue 'compensationTI'}} € / {{_ "jump"}}</span>
       </div>
       <div class=col-md-10>
       {{> afFieldInput name='compensationTI'}}
@@ -140,36 +140,36 @@
       </div>
       <br><br><br>
       <div class=row>
-      <div class=col-md-2><label>Korvaus kuvaaja</label>
+      <div class=col-md-2><label>{{_ "compensation_camera"}}</label>
       <br>
-      <span class="btn btn-success">{{fieldValue 'compensationCamera'}} € / kuvaus</span></div>
+      <span class="btn btn-sm btn-success">{{fieldValue 'compensationCamera'}} € / {{_ "jump"}}</span></div>
       <div class=col-md-10>
       {{> afFieldInput name='compensationCamera'}}
       </div>
       </div>
       <br><br><br>
       <div class=row>
-      <div class=col-md-2><label>Korvaus pakkaaja</label>
+      <div class=col-md-2><label>{{_ "compensation_packer"}}</label>
       <br>
-      <span class="btn btn-success">{{fieldValue 'compensationPacker'}} € / pakkaus</span></div>
+      <span class="btn btn-sm btn-success">{{fieldValue 'compensationPacker'}} € / {{_ "packing"}}</span></div>
       <div class=col-md-10>
       {{> afFieldInput name='compensationPacker'}}
       </div>
       </div>
       <br><br><br>
       <div class=row>
-      <div class=col-md-2><label>Korvaus kalusto</label>
+      <div class=col-md-2><label>{{_ "compensation_rig"}}</label>
       <br>
-      <span class="btn btn-success">{{fieldValue 'compensationRig'}} € / hyppy</span></div>
+      <span class="btn btn-sm btn-success">{{fieldValue 'compensationRig'}} € / {{_ "jump"}}</span></div>
       <div class=col-md-10>
       {{> afFieldInput name='compensationRig'}}
       </div>
       </div>
       <br><br><br>
       <div class=row>
-      <div class=col-md-2><label>Korvaus pilotti</label>
+      <div class=col-md-2><label>{{_ "compensation_pilot"}}</label>
       <br>
-      <span class="btn btn-success">{{fieldValue 'compensationPilot'}} € / poka</span></div>
+      <span class="btn btn-sm btn-success">{{fieldValue 'compensationPilot'}} € / {{_ "load"}}</span></div>
       <div class=col-md-10>
       {{> afFieldInput name='compensationPilot'}}
       </div>

@@ -1,46 +1,45 @@
 <template name="summary">
-  <h2>Yhteenveto</h2>
+  <h2>{{_ "summary"}}</h2>
   <p>
-    Hyppyjä organisaatiossa hypätään vuosittain <strong>{{fieldValue 'jumpsPerYear'}}</strong>, joista <strong>{{fieldValue 'tandemsPerYear'}}</strong> on tandemeita.
-    <br>
-    Lentotunteja kertyy vuosittain <strong>{{flightHoursPerYear}} h</strong> ja kun hyppypäiviä on {{fieldValue 'jumpDaysPerYear'}} niin hyppypäivittäin lennetään keskimäärin <strong>{{averageFlightHoursPerJumpDay}} h</strong>.
+    {{{_ "summary_jumps" jumpsPerYear=jumpsPerYear tandemsPerYear=tandemsPerYear}}}
   </p>
   <p>
-    Koneeseen mahtuu <strong>{{fieldValue 'acJumpersIn'}}</strong> hyppääjää eli vuodessa hypätään pokia yhteensä <strong>{{loadsPerYear}}</strong>.
+  {{{_ "summary_flight_hours" flightHoursPerYear=flightHoursPerYear jumpDaysPerYear=jumpDaysPerYear averageFlightHoursPerJumpDay=averageFlightHoursPerJumpDay}}}
   </p>
   <p>
-    Lentokone käy täydessä hyppykorkeudessa <strong>{{fieldValue 'acJumpersIn'}}</strong> hyppääjää kyydissään <strong>{{fieldValue 'fullAltitudeLoadMins'}}</strong> minuutissa.
-    <br>
-    Tunnissa kapasiteettia on <strong>{{capacityPerHour}}</strong> henkilön hyppykorkeuteen viemiseen.
+  {{{_ "summary_load" acJumpersIn=acJumpersIn loadsPerYear=loadsPerYear}}}
   </p>
   <p>
-    Yksi slotti (1 henkilö 4000metriin) maksaa (kulut) <strong>{{slotCost}} €</strong>.
+    {{{_ "summary_performance" acJumpersIn=acJumpersIn fullAltitudeLoadMins=fullAltitudeLoadMins capacityPerHour=capacityPerHour}}}
   </p>
-  <h3>Tuotot</h3>
+  <p>
+    {{{_ "summary_slot_cost" slotCost=slotCost}}}
+  </p>
+  <h3>{{_ "calculation"}}</h3>
   <table class="table table-hover">
     <thead>
       <tr>
         <th>
-          Laji
+        {{_ "type"}}
         </th>
         <th class="text-right">
-          Kpl
+        {{_ "quantity"}}
         </th>
         <th class="text-right">
-          Liikevaihto
+        {{_ "turnover"}}
         </th>
         <th class="text-right">
-          Kulut
+        {{_ "costs"}}
         </th>
         <th class="text-right">
-          Kate
+        {{_ "profit"}}
         </th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>
-          Jäsenmaksut
+          {{_ "membership_fees"}}
         </td>
         <td class="text-right">
           {{fieldValue 'members'}}
@@ -57,7 +56,7 @@
       </tr>
       <tr>
         <td>
-          Lisenssihyppääjät
+          {{_ "license_jumpers"}}
         </td>
         <td class="text-right">
           {{fieldValue 'jumpsPerYear'}}
@@ -74,7 +73,7 @@
       </tr>
       <tr>
         <td>
-          Tandem
+          {{_ "tandem"}}
         </td>
         <td class="text-right">
           {{fieldValue 'tandemsPerYear'}}
@@ -93,7 +92,7 @@
     <thead>
       <tr>
         <th>
-          Välisumma
+          {{_ "subtotal"}}
         </th>
         <th>
         </th>
@@ -111,7 +110,7 @@
     <tbody>
       <tr>
         <td>
-          Kiinteät kulut
+          {{_ "fixed_costs"}}
         </td>
         <td>
         </td>
@@ -128,7 +127,7 @@
       <thead>
       <tr>
         <th>
-          Yhteensä
+          {{_ "total"}}
         </th>
         <th>
         </th>

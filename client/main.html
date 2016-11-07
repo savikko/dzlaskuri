@@ -22,13 +22,13 @@
 <body>
 
   <div class="container">
-    <h1>DZ Laskuri</h1>
+    <h1>{{_ "dzlaskuri"}} <small><a href="#" id="lang_fi">FI</a> | <a href="#" id="lang_en">EN</a></small></h1>
   {{#if Template.subscriptionsReady}}
     <div class="col-md-6">
     {{> flashMessages}}
     {{> Template.dynamic template=content}}
     </div>
-    <div class="col-md-6 hidden-xs hidden-sm">
+    <div class="col-md-4 hidden-xs hidden-sm">
     <div class="affix"> 
         {{> summary}}
     </div>

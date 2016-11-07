@@ -1,7 +1,23 @@
 Template.summary.helpers({
+  fullAltitudeLoadMins() {
+    return AutoForm.getFieldValue('fullAltitudeLoadMins', 'newDz');
+  },
+  acJumpersIn() {
+    return AutoForm.getFieldValue('acJumpersIn', 'newDz');
+  },
+  jumpsPerYear() {
+    return AutoForm.getFieldValue('jumpsPerYear', 'newDz');
+  },
+  jumpDaysPerYear() {
+    return AutoForm.getFieldValue('jumpDaysPerYear', 'newDz');
+  },
+  tandemsPerYear() {
+    return AutoForm.getFieldValue('tandemsPerYear', 'newDz');
+  },
   fieldValue(field) {
     return AutoForm.getFieldValue(field, 'newDz');
   },
+
   loadsPerYear() {
     return loadsPerYear();
   },

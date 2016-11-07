@@ -1,0 +1,45 @@
+<head>
+  <meta charset="utf-8">
+  <title>DZ Laskuri</title>
+  <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!-- <meta name="apple-mobile-web-app-capable" content="yes" /> -->
+  <meta property="og:image" content="/ico/favicon.ico"/>
+  <!-- <meta property="og:title" content=""/>
+  <meta property="og:url" content=""/>
+  <meta property="og:site_name" content=""/> -->
+  <meta property="og:type" content="website"/>
+  
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+   <!-- Fav and touch icons -->
+  <link rel="shortcut icon" href="/ico/favicon.ico">
+</head>
+<template name="layout">
+<body>
+
+  <div class="container">
+    <h1>DZ Laskuri</h1>
+  {{#if Template.subscriptionsReady}}
+    <div class="col-md-6">
+    {{> flashMessages}}
+    {{> Template.dynamic template=content}}
+    </div>
+    <div class="col-md-6 hidden-xs hidden-sm" id="summary">
+      <div data-spy="affix" target="summary"> 
+        {{> summary}}
+      </div>
+    </div>
+    <div class="col-md-6 visible-xs visible-sm">
+      {{> summary}}
+    </div>
+    {{else}}
+    <div class="loading">loading...</div>
+  {{/if}}
+  </div>
+
+</body>
+</template>

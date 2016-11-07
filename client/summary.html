@@ -1,0 +1,149 @@
+<template name="summary">
+  <h2>Yhteenveto</h2>
+  <p>
+    Hyppyjä organisaatiossa hypätään vuosittain <strong>{{fieldValue 'jumpsPerYear'}}</strong>, joista <strong>{{fieldValue 'tandemsPerYear'}}</strong> on tandemeita.
+    <br>
+    Lentotunteja kertyy vuosittain <strong>{{flightHoursPerYear}} h</strong> ja kun hyppypäiviä on {{fieldValue 'jumpDaysPerYear'}} niin hyppypäivittäin lennetään keskimäärin <strong>{{averageFlightHoursPerJumpDay}} h</strong>.
+  </p>
+  <p>
+    Koneeseen mahtuu <strong>{{fieldValue 'acJumpersIn'}}</strong> hyppääjää eli vuodessa hypätään pokia yhteensä <strong>{{loadsPerYear}}</strong>.
+  </p>
+  <p>
+    Lentokone käy täydessä hyppykorkeudessa <strong>{{fieldValue 'acJumpersIn'}}</strong> hyppääjää kyydissään <strong>{{fieldValue 'fullAltitudeLoadMins'}}</strong> minuutissa.
+    <br>
+    Tunnissa kapasiteettia on <strong>{{capacityPerHour}}</strong> henkilön hyppykorkeuteen viemiseen.
+  </p>
+  <p>
+    Yksi slotti (1 henkilö 4000metriin) maksaa (kulut) <strong>{{slotCost}} €</strong>.
+  </p>
+  <h3>Tuotot</h3>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>
+          Laji
+        </th>
+        <th class="text-right">
+          Kpl
+        </th>
+        <th class="text-right">
+          Liikevaihto
+        </th>
+        <th class="text-right">
+          Kulut
+        </th>
+        <th class="text-right">
+          Kate
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          Jäsenmaksut
+        </td>
+        <td class="text-right">
+          {{fieldValue 'members'}}
+        </td>
+        <td class="text-right">
+          {{memberfeeTotal}} €
+        </td>
+        <td class="text-right">
+          - €
+        </td>
+        <td class="text-right">
+          {{memberfeeTotal}} €
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Lisenssihyppääjät
+        </td>
+        <td class="text-right">
+          {{fieldValue 'jumpsPerYear'}}
+        </td>
+        <td class="text-right">
+          {{licenseJumpsTurnOver}} €
+        </td>
+        <td class="text-right">
+          {{licenseJumpsCosts}} €
+        </td>
+        <td class="text-right">
+          {{licenseJumpsRevenue}} €
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Tandem
+        </td>
+        <td class="text-right">
+          {{fieldValue 'tandemsPerYear'}}
+        </td>
+        <td class="text-right">
+          {{tandemJumpsTurnOver}} €
+        </td>
+        <td class="text-right">
+          {{tandemJumpsCosts}} €
+        </td>
+        <td class="text-right">
+          {{tandemJumpsRevenue}} €
+        </td>
+      </tr>
+    </tbody>
+    <thead>
+      <tr>
+        <th>
+          Välisumma
+        </th>
+        <th>
+        </th>
+        <th class="text-right">
+          {{turnOverTotal}} €
+        </th>
+        <th class="text-right">
+          {{costsTotal}} €
+        </th>
+        <th class="text-right">
+          {{revenueTotal}} €
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          Kiinteät kulut
+        </td>
+        <td>
+        </td>
+        <td class="text-right">
+        </td>
+        <td class="text-right">
+          {{fixedCostsTotal}} €
+        </td>
+        <td class="text-right">
+          -{{fixedCostsTotal}} €
+        </td>
+      </tr>
+    </tbody>
+      <thead>
+      <tr>
+        <th>
+          Yhteensä
+        </th>
+        <th>
+        </th>
+        <th class="text-right">
+          {{turnOverTotal}} €
+        </th>
+        <th class="text-right">
+          {{costsTotalMinusFixedCosts}} €
+        </th>
+        <th class="text-right">
+          <button class="btn btn-{{revenueTotalMinusFixedCosts.class}}">
+          {{revenueTotalMinusFixedCosts.value}} €
+          </button>
+        </th>
+      </tr>
+    </thead>
+  </table>
+</template>

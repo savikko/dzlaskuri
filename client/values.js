@@ -2,7 +2,6 @@ Template.values.helpers({
     defaultValues: function() {
         var id = FlowRouter.getParam('id');
         var valueDoc = {};
-        console.log('id: ' + id);
         if (id == null) {
             valueDoc = {
                 memberFee: 75,
@@ -26,7 +25,6 @@ Template.values.helpers({
         } else {
             valueDoc = Dz.findOne(id)
         }
-        console.log(valueDoc);
         return valueDoc;
     },
     fieldValue(field) {
@@ -40,7 +38,6 @@ AutoForm.hooks({
         // Called when any operation succeeds, where operation will be
         // "insert", "update", "submit", or the method name.
         onSuccess: function(operation, result, template) {
-            console.log('result: ' + result);
             window.location.href = '/' + result;
         },
         onError: function(formType, error) {
